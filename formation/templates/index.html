@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load myfilter %}
+
+<header>
+    {% include 'navbar.html' %}
+</header>
+
+
+{% block header %}
+    {% include 'navbar.html' %}
+{% endblock %}
+
+{% block content %}
+ <h1>Formation django</h1>
+    <h4>Bienvenue <u> {{nom}} </u></h4>
+    <h4> {{numéro}} </h4>
+    <h4> {{maList}} </h4>
+    <ul>
+        {% for item in maList %}
+        <li> {{item }} </li>
+        {% empty %}
+        <h4>Pas d'élément pour le moment</h4>
+        {% endfor %}
+    </ul>
+{% endblock %}
