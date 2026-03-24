@@ -6,7 +6,7 @@ class Products(models.Model):
     name = models.CharField(max_length=150)
     description = models.TextField()
     price = models.DecimalField(max_digits=10000, decimal_places=2)
-    image = models.ImageField(upload_to="images", null=True)
+    image = models.ImageField(upload_to="images", null=True, default=None)
     status = models.BooleanField(default=False)
 
     class Meta:
