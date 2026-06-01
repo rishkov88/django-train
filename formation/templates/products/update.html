@@ -1,0 +1,13 @@
+{% extends "products/bases.html" %}
+
+{% block content %}
+<center>
+    <h3 style="color: green;"> {{message}} </h3>
+    <form method="post" action="{% url 'update' my_id %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+</center>
+
+{% endblock %}

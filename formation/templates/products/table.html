@@ -1,0 +1,35 @@
+{% extends "products/bases.html" %}
+
+{% block content %}
+<center>
+    <h1 style="color:green">Product management table</h1>
+</center>
+
+<a href="create" class="btn btn-primary">Add product</a>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Product's name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Voir</th>
+      <th scope="col">Modifier</th>
+      <th scope="col">Supprimer</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in obj %}
+        <tr>
+        <th scope="row">{{item.id}}</th>
+        <td>{{item.name}}</td>
+        <td>{{item.description}}</td>
+        <td><a href="" class="btn btn-primary">Voir</a></td>
+        <td><a href="update/{{item.id}}" class="btn btn-warning">Modifier</a></td>
+        <td><a href="delete/{{item.id}}" class="btn btn-danger">Supprimer</a></td>
+        </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

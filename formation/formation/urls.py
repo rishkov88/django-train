@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from products.views import blog, contact, products, product_list
+from products.views import blog, contact, products, product_list, productCreate, modifier, table, deleteProduct
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -24,7 +24,11 @@ urlpatterns = [
     path('products', products, name='products'),
     path('contact', contact, name='contact'),
     path('blog', blog, name='blog'),
-    path('', product_list, name='product_list')
+    path('', product_list, name='product_list'),
+    path('create', productCreate, name='create'),
+    path('update/<int:my_id>', modifier, name='update'),
+    path('manager', table, name='table'),
+    path('delete/<int:my_id>', deleteProduct, name='delete')
 ]
 
 if settings.DEBUG:

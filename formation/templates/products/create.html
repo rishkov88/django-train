@@ -1,0 +1,43 @@
+{% extends "products/bases.html" %}
+
+
+<!--
+<h3> {{msg}} </h3>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Create</button>
+</form>
+-->
+
+<!-- <center> 
+    <h3 style="color: green;"> {{message}} </h3>
+    <form method="post" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+        <br>
+        <input type="text" name="name" placeholder="Enter product's name">
+        <br><br>
+        <input type="text" name="description" placeholder="Enter produt's description">
+        <br><br>
+        <input type="number" name="price" placeholder="0.00">
+        <br><br>
+        <input type="file" name="image" placeholder="Choose product's image">
+        <br><br>
+        <input type="checkbox" name="status" value="active" placeholder="Status">
+        <br><br>
+        <button type="submit">Save</button>
+    </form>
+</center> -->
+
+
+{% block content %}
+<center>
+    <h3 style="color: green;"> {{message}} </h3>
+    <form method="post" action="/create" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+</center>
+
+{% endblock %}
